@@ -16,7 +16,6 @@ class syntax_plugin_odtsupport extends DokuWiki_Syntax_Plugin
 	private $odt_field_pagehash4 = 'pagehash4tofield';
 	private $odt_field_pagehash = 'pagehashtofield';
 	private $odt_field_metadata = 'metadatatofield';
-	private $dateformat = 'm.d.y | H:m:s \U\h\r';
 	
     /**
      * @return string Syntax mode type
@@ -103,7 +102,7 @@ class syntax_plugin_odtsupport extends DokuWiki_Syntax_Plugin
 				// check if the given string contains 'date'
 				if (strpos($string,'date') !== false) {
 					// convert the given date to a date string
-					$hash = date($this->dateformat, intval($metadata));
+					$hash = date($this->getConf('dateformat'), intval($metadata));
 				} else {
 					// take the raw data
 					$hash = $metadata;
