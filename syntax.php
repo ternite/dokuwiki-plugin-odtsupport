@@ -142,38 +142,15 @@ class syntax_plugin_odtsupport extends DokuWiki_Syntax_Plugin
             if ($command == $this->odt_field_pagehash4
 			|| $command == $this->odt_field_pagehash
 			|| $command == $this->odt_field_metadata) {
-				$this->_fieldsODTAddUserField($renderer, $string, $renderer->_xmlEntities($hash));
+				$fieldsPlugin = $this->loadHelper('fields');
+				if ($fieldsPlugin) {
+					$fieldsPlugin->ODTSetUserField($renderer, $string, $renderer->_xmlEntities($hash));
+				}
 			}
 			return true;
         }
 
         return true;
-    }
-
-    function _fieldsODTFilterUserFieldName($name) {
-        // keep only allowed chars in the name
-        return preg_replace('/[^a-zA-Z0-9_.]/', '', $name);
-    }
-
-    function _fieldsODTAddUserField(&$renderer, $name, $value) {
-        if (!method_exists ($renderer, 'addUserField')) {
-            $name = $this->_fieldsODTFilterUserFieldName($name);
-            $renderer->fields[$name] = $value;
-        } else {
-            $renderer->addUserField($name, $value);
-        }
-    }
-
-    function _fieldsODTInsertUserField(&$renderer, $name) {
-        if (!method_exists ($renderer, 'insertUserField')) {
-            $name = $this->_fieldsODTFilterUserFieldName($name);
-            if (array_key_exists($name, $renderer->fields)) {
-                return '<text:user-field-get text:name="'.$name.'">'.$renderer->fields[$name].'</text:user-field-get>';
-            }
-        } else {
-            $renderer->insertUserField($name);
-        }
-        return '';
     }
 }
 
