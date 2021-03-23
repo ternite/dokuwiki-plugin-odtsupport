@@ -1,6 +1,6 @@
 <?php
 /**
- * German language file for config of Wrap plugin
+ * German language file for config of odtsupport plugin
  *
  */
 
