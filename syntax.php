@@ -136,8 +136,10 @@ class syntax_plugin_odtsupport extends DokuWiki_Syntax_Plugin
 			return true;
         } elseif ($mode == 'text') {
 			// make the hash code searchable (usage of plugins searchtext and text necessary!)
-			$renderer->doc .= $hash;
-            return true;
+			if ($command != $this->odt_field_metadata) { // don't insert metadata - if this should be searchable, it may be printed onto the page
+				$renderer->doc .= $hash;
+				return true;
+			}
         } elseif ($mode == 'odt') {
             if ($command == $this->odt_field_pagehash4
 			|| $command == $this->odt_field_pagehash
