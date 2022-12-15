@@ -6,7 +6,7 @@ author     : Thomas Schäfer
 email      : thomas@hilbershome.de 
 type       : syntax
 lastupdate : 2022-12-15
-compatible : 2020-07-29 "Hogfather"
+compatible : 2022-07-31 "Igor"
 depends    : odt, text
 conflicts  : 
 similar    : 
