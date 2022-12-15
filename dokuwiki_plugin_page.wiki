@@ -5,14 +5,14 @@ description: Provides helpers that can be useful when creating ODT files with th
 author     : Thomas Schäfer
 email      : thomas@hilbershome.de 
 type       : syntax
-lastupdate : 2022-01-28
+lastupdate : 2022-12-15
 compatible : 2020-07-29 "Hogfather"
 depends    : odt, text
 conflicts  : 
 similar    : 
 tags       : export, odt
 
-downloadurl: https://github.com/ternite/dokuwiki-plugin-odtsupport/archive/v0.85.zip
+downloadurl: https://github.com/ternite/dokuwiki-plugin-odtsupport/archive/v0.86.zip
 bugtracker : https://github.com/ternite/dokuwiki-plugin-odtsupport/issues
 sourcerepo : https://github.com/ternite/dokuwiki-plugin-odtsupport
 donationurl: 
@@ -134,6 +134,9 @@ You can use the keywords //<PAGEHASH>// and //<PAGEHASH4>// to insert page hashe
     * v0.84 Smaller fixes
   * **2022-01-28**
     * v0.85 Added serverurl functionality
+  * **2022-12-15**
+    * v0.86 Added possibility to use hash4 pattern
+	  * Also, the repository had to be recreated. The reason for the loss on github.com is unknown.
 
 === Known Bugs and Issues ===
 
