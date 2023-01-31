@@ -137,9 +137,9 @@ You can use the keywords //<PAGEHASH>// and //<PAGEHASH4>// to insert page hashe
     * v0.85 Added serverurl functionality
   * **2022-12-15**
     * v0.86 Added possibility to use hash4 pattern
-	  * Also, the repository had to be recreated. The reason for the loss on github.com is unknown.
+      * Also, the repository had to be recreated. The reason for the loss on github.com is unknown.
   * **2023-01-31**
-    * v0.87 Added usage of the[[usecounter]] plugin and the config option 'firstdefinitionwins'.
+    * v0.87 Added optional usage of the [[usecounter]] plugin and the config option 'firstdefinitionwins'.
 
 === Known Bugs and Issues ===
 
