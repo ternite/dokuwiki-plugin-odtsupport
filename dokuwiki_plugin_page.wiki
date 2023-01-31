@@ -5,14 +5,14 @@ description: Provides helpers that can be useful when creating ODT files with th
 author     : Thomas Schäfer
 email      : thomas@hilbershome.de 
 type       : syntax
-lastupdate : 2022-12-15
+lastupdate : 2023-01-31
 compatible : 2020-07-29 "Hogfather",2022-07-31 "Igor"
 depends    : odt, text
 conflicts  : 
 similar    : 
 tags       : export, odt
 
-downloadurl: https://github.com/ternite/dokuwiki-plugin-odtsupport/archive/v0.86.zip
+downloadurl: https://github.com/ternite/dokuwiki-plugin-odtsupport/archive/v0.87.zip
 bugtracker : https://github.com/ternite/dokuwiki-plugin-odtsupport/issues
 sourcerepo : https://github.com/ternite/dokuwiki-plugin-odtsupport
 donationurl: 
@@ -119,6 +119,7 @@ You can use the keywords //<PAGEHASH>// and //<PAGEHASH4>// to insert page hashe
 
   * **dateformat** - Date format string compliant with the PHP function date(). It's used for the command 'metadatatofield', in case a date is read from the metadata.
   * **serverurl** - URL to a server location. See serverurl syntax description.
+  * **firstdefinitionwins** - When using 'metadatatofield' or 'pagehashtofield', this configuration option allows to specify that only the first occurence of them will result in setting a field within an ODT file.
 
 ===== Development =====
 
@@ -137,6 +138,8 @@ You can use the keywords //<PAGEHASH>// and //<PAGEHASH4>// to insert page hashe
   * **2022-12-15**
     * v0.86 Added possibility to use hash4 pattern
 	  * Also, the repository had to be recreated. The reason for the loss on github.com is unknown.
+  * **2023-01-31**
+    * v0.87 Added usage of the[[usecounter]] plugin and the config option 'firstdefinitionwins'.
 
 === Known Bugs and Issues ===
 
