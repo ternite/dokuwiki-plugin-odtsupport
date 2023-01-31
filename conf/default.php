@@ -7,3 +7,4 @@
 
 $conf['dateformat']    = 'd.m.y | H:i:s';
 $conf['serverurl']    = 'file:\\\\\\\\\\SERVER\\path\\to\\directory';
+$conf['firstdefinitionwins'] = 1;

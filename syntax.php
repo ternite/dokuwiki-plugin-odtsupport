@@ -171,8 +171,14 @@ class syntax_plugin_odtsupport extends DokuWiki_Syntax_Plugin
 			|| $command == $this->odt_field_pagehash
 			|| $command == $this->odt_field_metadata) {
 				$fieldsPlugin = $this->loadHelper('fields');
-				if ($fieldsPlugin) {
-					$fieldsPlugin->ODTSetUserField($renderer, $string, $renderer->_xmlEntities($hash));
+				if ($fieldsPlugin && $this->getConf('firstdefinitionwins')) {
+                    $usecounter_helper = plugin_load('helper','usecounter');
+                
+                    if ($usecounter_helper && $usecounter_helper->amountOfUses('odtsupport_'.$command) == 0) {
+                        $fieldsPlugin->ODTSetUserField($renderer, $string, $renderer->_xmlEntities($hash));
+                        $usecounter_helper->incUsageOf('odtsupport_'.$command);
+                    }
+                    
 				}
 			}
 			return true;
